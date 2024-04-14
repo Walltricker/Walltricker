@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.global.css">
+    <link rel="stylesheet" href="style.pc.css">
+    <link rel="stylesheet" href="./style.phone.css">
+    <script src="button.js"></script>
 </head>
-<style>
-    html {
-        height: 100%;
-    }
-
-    body {
-        height: 100%;
-        background-color: black;
-    }
-</style>
-
 <body>
+    <main id="window">
+        <div class="Pannel" id="Pannel_L">
+        </div>
+        <div class="Pannel" id="Pannel_M">
+        </div>
+        <div class="Pannel" id="Pannel_C">
+        </div>
+        <div class="Pannel" id="Pannel_R">
+        </div>
+    </main>
+    <header>
+        <button onclick="myMove()">Click Me</button>
+    </header>
+    <footer></footer>
 
 </body>
-
 </html>
