@@ -1,0 +1,59 @@
+@media only screen and (max-width: 600px) {
+
+    html {
+        overflow: hidden;
+    }
+
+    header {
+        position: fixed;
+        z-index: 1;
+        top: 90vh;
+    
+        height: 10vh;
+        width: 100%;
+        background-color: black;
+
+        display: flex;
+        justify-content: space-around;
+        align-content: space-around;
+    }
+
+    header button {
+        height: 40%;
+    }
+
+    main {
+        position: relative;
+        top: 0;
+
+        background-color: blue;
+        height: 100vh;
+
+        display: grid;
+        
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 90vh 10vh 90vh 10vh;
+
+        grid-template-areas: "LP MP RP" ". . . " "CP CP CP";
+    }
+
+    #Pannel_L{
+        grid-area: LP;
+        background-color: red;
+    }
+
+    #Pannel_M{
+        grid-area: MP;
+        background-color: white;
+    }
+
+    #Pannel_R{
+        grid-area: RP;
+        background-color: yellow;
+    }
+
+    #Pannel_C{
+        grid-area: CP;
+        background-color: orange;
+    }
+}
