@@ -1,0 +1,20 @@
+html {
+    height: 100%;
+    --main-background-color: #193333;
+    --heading-background-color: #264D4D ;
+
+    --Pannel-L-background-color: #bad2db  none;
+    --Pannel-R-background-color: #bad2db none;
+    --Pannel-C-background-color: #0d3646 ;
+    --Pannel-M-background-color: #687e86 none;
+
+    --Edge-Left: URL("/resources/Background-Art/Edge_L.png");
+    --Edge-Right: URL("/resources/Background-Art/Edge_R.png");
+    --Sword: URL("/resources/Background-Art/Sword2.png")
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}

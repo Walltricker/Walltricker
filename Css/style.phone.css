@@ -39,21 +39,53 @@
 
     #Pannel_L{
         grid-area: LP;
-        background-color: red;
+        background-color: var(--Pannel-L-background-color);
     }
 
     #Pannel_M{
         grid-area: MP;
-        background-color: white;
+        background-color: var(--Pannel-M-background-color);
     }
 
     #Pannel_R{
         grid-area: RP;
-        background-color: yellow;
+        background-color: var(--Pannel-R-background-color);
     }
 
     #Pannel_C{
         grid-area: CP;
-        background-color: orange;
+        background-color: var(--Pannel-C-background-color);
     }
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Phone Settings / Header Styling
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+header {
+    height: 10vh;
+    width: 100%;
+    background-color: var(--heading-background-color);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+}
+
+header button {
+    height: 50%;
+    flex: 1;
+
+    background-color: rgb(255,255,255,0);
+    border: none;
+    font-size: small;
+    color: #D2AB4B;
+    text-transform: uppercase;
+}
+
+header button:hover {
+    color: white;
 }

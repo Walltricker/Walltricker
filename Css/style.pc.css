@@ -1,0 +1,75 @@
+/*══════════════════════════════════════════════════════════════════════
+    CSS - PC Settings
+══════════════════════════════════════════════════════════════════════*/
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    PC Settings / Main Styling
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+main {
+    height: 90vh;
+    background-color: var(--main-background-color);
+    display: flex;
+}
+
+#Pannel_L{
+    flex: 1;
+    background-color: var(--Pannel-L-background-color);
+    background-image: var(--Edge-Left);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+#Pannel_M{
+    flex: 0.5;  
+}
+
+#Pannel_M img{
+    height: auto;
+    max-height: 75%;
+}
+
+
+#Pannel_R{
+    flex: 1;
+    background-color: var(--Pannel-L-background-color);
+    background-image: var(--Edge-Right);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+#Pannel_C{
+    flex: 1;
+    background-color: var(--Pannel-C-background-color);
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    PC Settings / Header Styling
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+header {
+    height: 10vh;
+    background-color: var(--heading-background-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+
+header button {
+    height: 50%;
+    width: 10%;
+
+    background-color: rgb(255,255,255,0);
+    border: none;
+    font-size: large;
+    color: #D2AB4B;
+    text-transform: uppercase;
+}
+
+header button:hover {
+    color: white;
+}
