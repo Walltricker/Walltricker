@@ -23,6 +23,9 @@ main {
 
 #Pannel_M{
     flex: 0.5;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #Pannel_M img{
@@ -41,7 +44,7 @@ main {
 }
 
 #Pannel_C{
-    flex: 1;
+    flex: 0;
     background-color: var(--Pannel-C-background-color);
 }
 

@@ -1,5 +1,9 @@
 html {
     height: 100%;
+}
+
+:Root {
+ 
     --main-background-color: #193333;
     --heading-background-color: #264D4D ;
 
@@ -11,7 +15,6 @@ html {
     --Edge-Left: URL("/resources/Background-Art/Edge_L.png");
     --Edge-Right: URL("/resources/Background-Art/Edge_R.png");
     --Sword: URL("/resources/Background-Art/Sword2.png")
-
 }
 
 * {
