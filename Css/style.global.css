@@ -56,7 +56,7 @@ main {
     z-index: 0;
 
     height: 200vh;
-    overflow: hidden;
+    overflow: scroll;
 
     display: flex;
     flex-direction: column;
