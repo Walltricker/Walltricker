@@ -1,16 +1,27 @@
+/*══════════════════════════════════════════════════════════════════════
+    CSS - HTML Settings
+══════════════════════════════════════════════════════════════════════*/
+
 html {
     height: 100%;
 }
 
-:Root {
- 
-    --main-background-color: #193333;
-    --heading-background-color: #264D4D ;
+/*══════════════════════════════════════════════════════════════════════
+    CSS - Variables 
+══════════════════════════════════════════════════════════════════════*/
 
-    --Pannel-L-background-color: #bad2db  none;
-    --Pannel-R-background-color: #bad2db none;
-    --Pannel-C-background-color: #0d3646 ;
-    --Pannel-M-background-color: #687e86 none;
+:Root {
+
+    --main-background-color: #073535;
+    --heading-background-color: #224d4d;
+
+    --Pannel-L-background-color: #bad2db;
+    --Pannel-R-background-color: #bad2db;
+    --Pannel-C-background-color: #0d3646;
+    --Pannel-M-background-color: #687e86;
+    
+    --Flower-T:URL("/resources/Background-Art/Flowers T.png");
+    --Flower-B:URL("/resources/Background-Art/Flowers B.png");
 
     --Edge-Left: URL("/resources/Background-Art/Edge_L.png");
     --Edge-Right: URL("/resources/Background-Art/Edge_R.png");
@@ -21,3 +32,200 @@ html {
     margin: 0;
     padding: 0;
 }
+
+/*══════════════════════════════════════════════════════════════════════
+    CSS - Core Tags 
+══════════════════════════════════════════════════════════════════════*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    CSS Settings / Body Styling
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+body {
+    height: 100%;
+    background-color: var(--main-background-color);
+
+    overflow: hidden;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    PC Settings / Main Styling
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+main {
+    position: relative;
+    top: 0;
+    z-index: 0;
+
+    height: 200vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#Buffer{
+    flex: 1;
+    background-color: var(--main-background-color);
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    PC Settings / Landing Page
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+#Landing {
+    display: flex;
+    flex: 9;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.Landing_Img{
+    height: 90vmin;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    PC Settings / Content Page
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+#Content{
+    display: flex;
+    flex-direction: column;
+    flex: 9;
+    background-color: var(--main-background-color);
+
+    justify-content: center;
+    align-content: center;
+}
+
+#CT-Bot{
+    flex: 1.5;
+    max-height: 15%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--main-background-color);
+    
+    background-image: var(--Flower-B);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#CT-Mid {
+    flex: 0;
+    display: grid;
+    grid-template-areas: "B";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    padding: 10px;
+}
+
+#Venue{
+    grid-area: A;
+    background-color: white;
+    display: none;
+}
+
+#Taxi{
+    grid-area: B;
+    background-color:rgb(255, 255, 255);
+    display: none;
+}
+
+#RSVP{
+    grid-area: C;
+    background-color: var(--heading-background-color);
+    display: none; /*Display flex*/
+    justify-content: center;
+    align-items: stretch;
+}
+
+#RSVP iframe{
+    width: 100%;
+    border: 0px;
+}
+
+#Photos{
+    grid-area: D;
+    background-color: green;
+    display: none;
+}
+
+#Entertainment{
+    grid-area: E;
+    display: none;
+}
+
+
+#CT-Top {
+    flex: 1.5;
+    max-height: 15%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--main-background-color);
+
+    background-image: var(--Flower-T);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.Flowers {
+    height: 10VH;
+    border: 1px solid black;
+    display: none;
+}
+
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    PC Settings / Header Styling
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+header {
+    height: 10vh;
+    width: 100%;
+    background-color: var(--heading-background-color);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0%;
+
+    position: fixed;
+    top: 90vh;
+
+    z-index: 2;
+}
+
+header .navigation{
+    height: 50%;
+    width: 10%;
+
+    background-color: rgb(255, 255, 255, 0);
+    border: none;
+    font-size: large;
+    color: #D2AB4B;
+    text-transform: uppercase;
+}
+
+header button:hover {
+    color: white;
+}
+
+header .exit{
+    position: fixed;
+    color: white;
+    border: none;
+    background-color: rgb(255, 255, 255, 0);
+
+    top: 5%;
+    right: 5vw;
+
+    display: none;
+}
+
