@@ -29,8 +29,10 @@ function ButtonClick(name) {
       exitB.display = "inline";
     }
   else {
+      lastPress = name; 
       clearInterval(ct);
       contentClose(name);
+      
     }
   }
 
@@ -81,12 +83,12 @@ function pageMoveup(elem,name) {
 function pageMoveDn(elem) {
   var pos = -100;
   clearInterval(id);
-  id = setInterval(frame, 5);
+  id = setInterval(frame, 10);
   function frame() {
     if (pos >= 0) {
       clearInterval(id);
     } else {
-      pos += 0.5;
+      pos ++;
       elem.top = pos + 'vh';
     }
   }
@@ -124,16 +126,15 @@ function contentOpen(name) {
 
 function contentClose(name) {
   var elem = document.getElementById("CT-Mid").style;
-  var fx = 7;
-  Clear();
+  var fx = 4;
   contenthide();
   cb = setInterval(frame, 10);
   function frame() {
     if (fx <= 0) {
-      clearInterval(cb);
+      Clear();
       contentOpen(name);
     } else {
-      fx -= 0.025;
+      fx -= 0.02;
       elem.flex = fx;
     }
   }
