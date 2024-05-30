@@ -1,103 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Wedding Website</title>
     <link rel="stylesheet" href="/Css/style.global.css">
-    <script src="button.js"></script>
+    <script src="/button.js"></script>
 </head>
-
 <body>
     <header>
-        <button class="navigation" onclick="ButtonClick(`venue`)">Venue</button>
-        <button class="navigation" onclick="ButtonClick(`taxi`)">Taxi</button>
-        <button class="navigation" onclick="ButtonClick(`rsvp`)">RSVP</button>
-        <button class="navigation" onclick="ButtonClick(`photos`)">Photos</button>
-        <button class="navigation" onclick="ButtonClick(`entertainment`)">Entertainment</button>
+        <button class="Page-Navigation" onclick="buttonClick(`Venue`)">Venue</button>
+        <button class="Page-Navigation" onclick="buttonClick(`Taxi`)">Taxi</button>
+        <button class="Page-Navigation" onclick="buttonClick(`RSVP`)">RSVP</button>
+        <button class="Page-Navigation" onclick="buttonClick(`Photos`)">Photos</button>
+        <button class="Page-Navigation" onclick="buttonClick(`Entertainment`)">Entertainment</button>
         <button class="exit" onclick="ButtonClose()">Homepage</button>
     </header>
-    
     <main>
-        <div id="Landing">
-            <img src="/resources/Background-Art/Edge_L.png" alt="" class="Landing_Img" id="Landing_Left">
-            <img src="/resources/Background-Art/Sword.png" alt="" class="Landing_Img" id="Landing_Mid">
-            <img src="/resources/Background-Art/Edge_R.png" alt="" class="Landing_Img" id="Landing_right">
-        </div>
-
-        <div id="Buffer"></div>
-
-
-        <div id="Content">
-            <div id="CT-Top">
-                <img src="/resources/Background-Art/Flowers T.png" alt="" class="Flowers">
+        <section class="Landing">
+            <img src="/resources/Background-Art/Edge_L.png" alt="">
+            <img src="/resources/Background-Art/Sword.png" alt="">
+            <img src="/resources/Background-Art/Edge_R.png" alt="">
+        </section>
+        <section class="Buffer"></section>
+        <section class="Content">
+            <div id="Upper">
+                <img src="/resources/Background-Art/Flowers T.png" alt="">
             </div>
-            <div id="CT-Mid">
-                <Section id="Venue">
-                    <div>
+            <div id="Middle">
+                <article id="Venue">
                     <h1>Event Details</h1>
-                    <div id="Moat-Img"></div>
-                    <p>The Wedding of William and Sapphire will take place on the 02 November 2024 at the Moat Farmhouse
-                    </p>
+                    <span>The Wedding of William and Sapphire will take place on the 02 November 2024 at the Moat Farmhouse</span>
+                    <img id="MoatImg" src="/resources/Images/moat.jpg" alt="">
                     <h2>Venue</h2>
-                    <p>The Moat is a Kent farmhouse with a beautiful 14th century barn. It is in the village of Wrotham,
+                    <span>The Moat is a Kent farmhouse with a beautiful 14th century barn. It is in the village of Wrotham,
                         which sits along Pilgrim’s Way and along the edge of the North Downs. We love the low beams,
                         Tudor panelling, and open fires – a perfect cosy winter pub environment! For our wedding, we
                         have exclusive access to the barn, attached bar, and a small private garden. The rest of the pub
                         and the main garden will remain open to members of the public, and dogs are welcome in those
                         areas – but not in the wedding! The garden has space heaters, and there are outdoor nooks
                         available for anyone needing a quiet moment. Parking is free, although you will have to enter
-                        your registration at the door.</p>
-                    </div>
-                </Section>
-                <Section id="Taxi">
-                    <h1>Taxi and Transportation</h1>
-                    <p>We recommend you call ahead to secure transportation if required. The following taxi companies
-                        are local to the venue: </p>
-                    <ul>
-                        <li><a href="https://www.oakstaxis.co.uk/">Oaks Taxis</a></li>
-                        <li><a href="https://sbstaxis.com/">SBS Taxis</a></li>
-                        <li><a href="https://www.boroughgreentaxi.co.uk/">Borough Green Taxis</a></li>
-                        <li><a href="https://www.thomsonlocal.com/search/taxis/wrotham-kent">Thomson Local details
-                                additional taxi companies</a></li>
-                    </ul>
-                    <P>For groups wanting to share transportation to Wrotham, Minibus Hire has</P>
+                        your registration at the door.</span>
+                </article>
+                <article id="Taxi">
+                    <H1>Hotels and Transportation</H1>
+                    <h2>Taxis ervices</h2>
+                    <span>We recommend you call ahead to secure transportation if required. The following taxi companies
+                        are local to the venue:</span>
+                        <ul>
+                            <li><a href="https://www.oakstaxis.co.uk/">Oaks Taxis</a></li>
+                            <li><a href="https://sbstaxis.com/">SBS Taxis</a></li>
+                            <li><a href="https://www.boroughgreentaxi.co.uk/">Borough Green Taxis</a></li>
+                            <li><a href="https://www.thomsonlocal.com/search/taxis/wrotham-kent">Thomson Local details
+                                    additional taxi companies</a></li>
+                        </ul>
+                    <h2>Minibus Services</h2>
+                    <span>For groups wanting to share transportation to Wrotham, Minibus Hire has</span>
                     <ul>
                         <li><a href="https://www.minibushirecambridge.net/">Cambridge</a></li>
                         <li><a href="https://www.minibushiresurrey.org/">Surrey</a></li>
                     </ul>
-                    <H1>Hotels</H1>
-                    <p>We have a block of rooms reserved at the <a
-                            href="https://www.ihg.com/holidayinn/hotels/gb/en/sevenoaks/maike/hoteldetail">Holiday Inn
-                            Sevenoaks</a>, just a 15-minute walk or 2-minute drive from the venue. To book one of these
-                        rooms, please call 01732 781500 and quote the reference ‘H82’. If there is still demand after
-                        these rooms are booked, we will look into booking a further block – please let us know if you
-                        would like a room but the block is full.</p>
-                </Section>
-                <Section id="RSVP">
-                    <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSe3ponQYllKwuolRXzy2AUUBDTrgah6Ct9gwEApMmELFUiSdQ/viewform?embedded=true">Loading…</iframe>
-                </Section>
-                <Section id="Photos"></Section>
-                <Section id="Entertainment">
+                    <h2>Minibus Services</h2>
+                    <span>We have a block of rooms reserved at the <a
+                        href="https://www.ihg.com/holidayinn/hotels/gb/en/sevenoaks/maike/hoteldetail">Holiday Inn
+                        Sevenoaks</a>, just a 15-minute walk or 2-minute drive from the venue. To book one of these
+                    rooms, please call 01732 781500 and quote the reference ‘H82’. If there is still demand after
+                    these rooms are booked, we will look into booking a further block – please let us know if you
+                    would like a room but the block is full.</span>
+                  
+                </article>
+                <article id="RSVP">
+                    <object
+                        data="https://docs.google.com/forms/d/e/1FAIpQLSe3ponQYllKwuolRXzy2AUUBDTrgah6Ct9gwEApMmELFUiSdQ/viewform?embedded=true"
+                        seamless="seamless" frameborder ="0">Loading…</object>
+                </article>
+                <article id="Photos">
+                    <H1>Title</H1>
+                    <span>opening Paragraph</span>
+                    <h2>subtitle</h2>
+                    <span>subtitle content</span>
+                </article>
+
+                <article id="Entertainment">
                     <H1>Entertainment</H1>
-                    <P>Throughout the wedding, you will find party game ideas hidden in various locations. Finding these
+                    <span>Throughout the wedding, you will find party game ideas hidden in various locations. Finding these
                         is half the fun! From 8pm, we will have live music in the bar provided by the one and only 
                         <a  href="https://www.fivechambersfull.com/">Five Chambers Full</a> 
                         and DJ sets from our favourite No Wave alumni. For those who prefer a quieter evening, we will have board games and
                         art supplies set up in the barn – perfect for kids and adults. We will also have a photo booth
-                        set up in the bar throughout the day. </P>
-                </Section>
+                        set up in the bar throughout the day.</span>
+                </article>
             </div>
-            <div id="CT-Bot">
-                <img src="/resources/Background-Art/Flowers B.png" alt="" class="Flowers">
+            <div id="Lower">
+                <img src="/resources/Background-Art/Flowers B.png" alt="">
             </div>
-        </div>
-        <div id="Buffer"></div>
-
+        </section>
+        <section class="Buffer"></section>
     </main>
-
+    
 </body>
-
 </html>
