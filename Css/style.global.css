@@ -1,273 +1,160 @@
-/*══════════════════════════════════════════════════════════════════════
-    CSS - HTML Settings
-══════════════════════════════════════════════════════════════════════*/
+/*====================================================================
+======================================================================  
+    Root Elements
+======================================================================
+====================================================================*/
+
+:root {
+    --heading-background-colour: rgb(36, 68, 36);
+    --header-font-color: #caa964;
+
+    --H1-font-color: #ca9115;
+    --para-font-color: #caa964;
+
+    --body-background-color: rgb(32, 51, 32);
+
+    font-size: 16px;
+}
 
 html {
     height: 100%;
 }
 
-/*══════════════════════════════════════════════════════════════════════
-    CSS - Variables 
-══════════════════════════════════════════════════════════════════════*/
-
-:Root {
-
-    font-size: 16px;
-
-    --main-background-color: #073535;
-    --heading-background-color: #224d4d;
-
-    --Pannel-L-background-color: #bad2db;
-    --Pannel-R-background-color: #bad2db;
-    --Pannel-C-background-color: #0d3646;
-    --Pannel-M-background-color: #687e86;
-
-    --Header-Font-Color: #D2AB4B;
-    --Text-Font-Color: #caa964;
-    
-    --Flower-T:URL("/resources/Background-Art/Flowers T.png");
-    --Flower-B:URL("/resources/Background-Art/Flowers B.png");
-
-    --Edge-Left: URL("/resources/Background-Art/Edge_L.png");
-    --Edge-Right: URL("/resources/Background-Art/Edge_R.png");
-    --Sword: URL("/resources/Background-Art/Sword2.png")
-}
-
 * {
     margin: 0;
     padding: 0;
+    animation-fill-mode: both;
 }
 
-/*══════════════════════════════════════════════════════════════════════
-    CSS - Core Tags 
-══════════════════════════════════════════════════════════════════════*/
-
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    CSS Settings / Body Styling
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-body {
-    font-size: 100%;
-    height: 100%;
-    background-color: var(--main-background-color);
-    overflow: scroll;
-
+*::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+    Animations
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    PC Settings / Main Styling
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-main {
-    position: relative;
-    top: 0;
-    z-index: 0;
-
-    height: 200vh;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-}
-
-#Buffer{
-    flex: 1;
-    background-color: var(--main-background-color);
-}
-
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    PC Settings / Landing Page
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-#Landing {
-    display: flex;
-    flex: 9;
-
-    justify-content: center;
-    align-items: center;
-}
-
-.Landing_Img{
-    height: 90vmin;
-}
-
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    PC Settings / Content Page
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-#Content{
-    display: flex;
-    flex-direction: column;
-    flex: 9;
-    background-color: var(--main-background-color);
-
-    justify-content: center;
-    align-content: center;
-}
-
-#CT-Bot{
-    flex: 1.5;
-    max-height: 15%;
-    display: flex;
-    justify-content: center;
-    background-color: var(--main-background-color);
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
     
-    background-image: var(--Flower-B);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
-#CT-Mid {
-    flex: 7;
-    display: grid;
-    grid-template-areas: "A";
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    padding: 10px;
+@keyframes close {
+    from {grid-template-rows: 10vh 70vh 10vh;}
+    to {grid-template-rows: 10vh 0vh 10vh;}
+}
 
+@keyframes scroll {
+    from {top: 0vh;}
+    to {top: -100vh;}
+}
+
+/*====================================================================
+======================================================================  
+    Font Elements
+======================================================================
+====================================================================*/
+
+    h1 {
+        padding-bottom: 1rem;
+        font-size: 4rem;
+        text-align: center;
+        color: var(--H1-font-color);
+    }
+
+    h2 {
+        padding: 1rem 0px;
+        font-size: 1.5rem;
+        text-align: center;
+        text-align-last: center;
+        color: var(--H1-font-color);
+    }
+
+    span {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        text-align: center;
+        color: var(--para-font-color);
+    }
+
+    ul {
+        color: black;
+        justify-self: left;
+    }
+
+    li {
+        color: var(--para-font-color);
+        text-decoration: none;
+        text-align: left;
+    }
+    a {
+        color: var(--para-font-color);
+        text-decoration: none;
+    }
+
+
+/*====================================================================
+======================================================================  
+    Body Section
+======================================================================
+====================================================================*/
+
+body {
+    height: 100%;
+    background-color: var(--body-background-color);
     overflow: scroll;
 }
 
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    Content Page / venue
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-
-#Venue{
-    grid-area: A;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    height: 100%;
-    margin: 10%;
-   
-    align-content: center;
-    justify-content: center;
-}
-
-#Venue div {
-    display: grid;
-    max-width: 600px;
-}
-
-#Moat-Img {
-    background-image: url("/resources/Images/moat.jpg");
-    height: 500px;
-    width: 100%;
-    background-size: cover;
-
-}
-
-#Venue div *{
-    border: 1px solid red;
-    margin: 0;
-    padding: 0;
-}
-
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    Content Page / Taxi
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-#Taxi{
-    grid-area: B;
-    background-color:rgb(255, 255, 255);
-    display: none;
-}
-
-#RSVP{
-    grid-area: C;
-    background-color: var(--heading-background-color);
-    display: none; /*Display flex*/
-    justify-content: center;
-    align-items: stretch;
-}
-
-#RSVP iframe{
-    width: 100%;
-    border: 0px;
-}
-
-#Photos{
-    grid-area: D;
-    background-color: green;
-    display: none;
-}
-
-#Entertainment{
-    grid-area: E;
-    display: none;
-}
-
-
-#CT-Top {
-    flex: 1.5;
-    max-height: 15%;
-    display: flex;
-    justify-content: center;
-    background-color: var(--main-background-color);
-
-    background-image: var(--Flower-T);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-.Flowers {
-    height: 10VH;
-    border: 1px solid black;
-    display: none;
-}
-
-
-
-
-
-
-
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    PC Settings / Header Styling
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*====================================================================
+======================================================================  
+    Header Section
+======================================================================
+====================================================================*/
 
 header {
-    height: 10vh;
-    width: 100%;
-    background-color: var(--heading-background-color);
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 0%;
-
-    overflow: hidden;
-
+    /* Positioning on page */
+    z-index: 1;
     position: fixed;
-    top: 90%;
+    top: 90vh;
 
-    z-index: 2;
+    /* Box sizing */
+    width: 100%;
+    height: 10vh;
+
+    /* Display settings */
+    display: flex;
+
+    /* Alignment of Childern */
+    align-items: center;
+    justify-content: space-evenly;
+
+    /* Background Details */
+    background-color: var(--heading-background-colour);
 }
 
-@media screen {
-    
+/*------------------------------------------------------------------- 
+    Header Section / buttons (Class = Page-Navigation)
+-------------------------------------------------------------------*/
+
+header .Page-Navigation {
+    background-color: #ffffff00;
+    border: 0px;
+    color: var(--header-font-color);
+    font-size: 1rem;
 }
 
-header .navigation{
-    height: 50%;
-    width: 10%;
-
-    background-color: rgb(255, 255, 255, 0);
-    border: none;
-    font-size: large;
-    color: var(--Header-Font-Color);
-    text-transform: uppercase;
-}
-
-header button:hover {
+header .Page-Navigation:hover {
     color: white;
-}
+ }
 
-header .exit{
+ header .Page-Navigation:active {
+    color: orange; /*TO DO - Define Colour properly*/
+ }
+
+ header .exit{
     position: fixed;
     color: white;
     border: none;
@@ -279,23 +166,169 @@ header .exit{
     display: none;
 }
 
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    CSS Settings / Font Styling
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*====================================================================
+======================================================================  
+    Main Section
+======================================================================
+====================================================================*/
 
-p {
-    color: var(--Text-Font-Color);
-    font-size: 1rem;
-    align-self: center;
+main {
+    position: fixed;
+
+    top: 0vh;
+
+    height: 200%;
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 90vh 10vh 90vh 10vh;
+
+    grid-template-areas: "Landing" "Buffer" "Content" "Buffer";
+
+    overflow-y: scroll;
 }
 
-h1 {
-    color: var(--Header-Font-Color);
-    font-size: 3rem;
-    align-self: center;
-    justify-self: center;
+/*------------------------------------------------------------------- 
+    Main Section / Buffer (Class = Buffer)
+-------------------------------------------------------------------*/
+
+main .Buffer {
+    grid-area: "Buffer";
 }
 
-h2 {
-    color: var(--Text-Font-Color);
+/*------------------------------------------------------------------- 
+    Main Section / landing page (Class = Landing)
+-------------------------------------------------------------------*/
+
+main .Landing {
+    grid-area: "Landing";
+
+    display: flex;
+    opacity: 0;
+
+    justify-content: center;
+
+    /*<<<<<Animation>>>>>> to add in on final*/
+    animation: fade 3s linear 1.5s 1 normal forwards;
 }
+
+/*------------------------------------------------------------------- 
+    Main Section / Content page (Class = Content)
+-------------------------------------------------------------------*/
+
+main .Content {
+    grid-area: "Content";
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 0vh 10vh;
+    grid-template-areas: "Upper" "Middle" "Lower";
+
+    align-content: center;
+
+    /*<<<<<Animation>>>>>> to add in on final*/
+    /* animation: close 1.5s linear 1s 1 reverse forwards;  */
+}
+
+/*__________________________________________________________________ 
+    Main Section / Content page (Class = Content)
+    / #Upper (ID = Upper)
+__________________________________________________________________*/
+
+main #Upper {
+    grid-area: "Upper";
+    display: flex;
+
+    justify-content: center;
+}
+
+/*__________________________________________________________________ 
+    Main Section / Content page (Class = Content)
+    / #Lower (ID = Lower)
+__________________________________________________________________*/
+
+main #Lower {
+    grid-area: "Lower";
+    display: flex;
+    justify-content: center;
+}
+
+/*__________________________________________________________________ 
+    Main Section / Content page (Class = Content)
+    / #Middle (ID = Middle)
+__________________________________________________________________*/
+
+main #Middle {
+    grid-area: "Middle";
+    overflow-y: scroll;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main ... Middle ... Venue (ID = Venue) */
+#Middle #Venue{
+    background-color: none;
+    max-width: 600px;
+    display: none; /*Flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#MoatImg {
+    max-width: 600px;
+    height: auto;
+}
+
+
+/* Main ... Middle ... Taxi (ID = Taxi) */
+#Middle #Taxi{
+    background-color: none;
+    max-width: 600px;
+    display: none; /*Flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main ... Middle ... RSVP (ID = RSVP) */
+#Middle #RSVP{
+    background-color: none;
+    display: none; /*Flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#RSVP object {
+    height: 70vh;
+    min-width: 600px;
+    border: 10px solid goldenrod;
+    border-radius: 10px;
+
+    background-color: white;
+    display: flex;
+}
+
+/* Main ... Middle ... Photos (ID = Photos) */
+#Middle #Photos{
+    background-color: yellow;
+    display: none;
+}
+
+/* Main ... Middle ... Other (ID = Other) */
+#Middle #Entertainment{
+    background-color: none;
+    max-width: 600px;
+    display: flex; /*Flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
