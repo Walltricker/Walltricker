@@ -12,6 +12,8 @@ html {
 
 :Root {
 
+    font-size: 16px;
+
     --main-background-color: #073535;
     --heading-background-color: #224d4d;
 
@@ -19,6 +21,9 @@ html {
     --Pannel-R-background-color: #bad2db;
     --Pannel-C-background-color: #0d3646;
     --Pannel-M-background-color: #687e86;
+
+    --Header-Font-Color: #D2AB4B;
+    --Text-Font-Color: #caa964;
     
     --Flower-T:URL("/resources/Background-Art/Flowers T.png");
     --Flower-B:URL("/resources/Background-Art/Flowers B.png");
@@ -41,9 +46,10 @@ html {
     CSS Settings / Body Styling
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 body {
+    font-size: 100%;
     height: 100%;
     background-color: var(--main-background-color);
-    overflow: hidden;
+    overflow: scroll;
 
 }
 
@@ -56,10 +62,12 @@ main {
     z-index: 0;
 
     height: 200vh;
-    overflow: scroll;
 
     display: flex;
     flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
 }
 
 #Buffer{
@@ -111,19 +119,55 @@ main {
 }
 
 #CT-Mid {
-    flex: 0;
+    flex: 7;
     display: grid;
-    grid-template-areas: "B";
+    grid-template-areas: "A";
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     padding: 10px;
+
+    overflow: scroll;
 }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Content Page / venue
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
 
 #Venue{
     grid-area: A;
-    background-color: white;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 10%;
+   
+    align-content: center;
+    justify-content: center;
 }
+
+#Venue div {
+    display: grid;
+    max-width: 600px;
+}
+
+#Moat-Img {
+    background-image: url("/resources/Images/moat.jpg");
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+
+}
+
+#Venue div *{
+    border: 1px solid red;
+    margin: 0;
+    padding: 0;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Content Page / Taxi
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 #Taxi{
     grid-area: B;
@@ -215,7 +259,7 @@ header .navigation{
     background-color: rgb(255, 255, 255, 0);
     border: none;
     font-size: large;
-    color: #D2AB4B;
+    color: var(--Header-Font-Color);
     text-transform: uppercase;
 }
 
@@ -235,3 +279,23 @@ header .exit{
     display: none;
 }
 
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    CSS Settings / Font Styling
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+p {
+    color: var(--Text-Font-Color);
+    font-size: 1rem;
+    align-self: center;
+}
+
+h1 {
+    color: var(--Header-Font-Color);
+    font-size: 3rem;
+    align-self: center;
+    justify-self: center;
+}
+
+h2 {
+    color: var(--Text-Font-Color);
+}

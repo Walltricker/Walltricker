@@ -4,9 +4,11 @@
 ===================================================================  */
 var landing = true;
 var lastPress = null;
-var id = null;
-var ct = null;
-var cb = null;
+var PageMoveUp = null;
+var PageMoveDown = null;
+var ContentOpen = null;
+var ContentClosed = null;
+
 
 /*  -------------------------------------------------------------------
     Button - CLick 
@@ -14,25 +16,41 @@ var cb = null;
 /* Button Click is used when a button is clicked on the website. its 
 main aim is to call a function based on the status of the site.      */
 
+
+/*
+Button Click will occur when the user clicks one of th buttons at the 
+bottom of the screen. 
+
+As a default the Landing Value is a Bool of True;
+The button will have a corrisponding name (Name)
+
+On click the fuction will check if the last name was called and 
+if so, do nothing - for now 
+
+If the button name is unique then the function will then check if the
+
+
+*/
+
 function ButtonClick(name) {
   var main = document.getElementsByTagName("main")[0].style;
   var exitB = document.getElementsByClassName("exit")[0].style;
+
+  console.log(`Button press $(name)`)
   
   if (lastPress == name) {
-          console.log("");
+      console.log(`Button press $(name) already pressed`);
     }
     else if (landing) {
       pageMoveup(main,name);
       landing = !landing;
       lastPress = name; 
-      clearInterval(ct);
       exitB.display = "inline";
     }
   else {
       lastPress = name; 
-      clearInterval(ct);
+      Clear();
       contentClose(name);
-      
     }
   }
 
@@ -51,9 +69,10 @@ function ButtonClose(){
 }
 
 function Clear () {
-  clearInterval(ct);
-  clearInterval(id);
-  clearInterval(cb);
+  clearInterval(ContentOpen);
+  clearInterval(ContentClosed);
+  clearInterval(PageMoveUp);
+  clearInterval(PageMoveDown);
 }
 
 /*  ===================================================================
@@ -63,16 +82,16 @@ function Clear () {
     Page Move - Up 
 -------------------------------------------------------------------  */
 function pageMoveup(elem,name) {
-  var pos = 0;
-  clearInterval(id);
-  id = setInterval(frame, 10);
+  var upos = 0;
+  Clear();
+  PageMoveUp = setInterval(frame, 10);
   function frame() {
-    if (pos <= -100) {
+    if (upos <= -100) {
       contentOpen(name);
-      clearInterval(id);
+      clearInterval(PageMoveUp);
     } else {
-      pos --;
-      elem.top = pos + 'vh';
+      upos --;
+      elem.top = upos + 'vh';
     }
   }
 }
@@ -81,15 +100,15 @@ function pageMoveup(elem,name) {
     Page Move - Down 
 -------------------------------------------------------------------  */
 function pageMoveDn(elem) {
-  var pos = -100;
-  clearInterval(id);
-  id = setInterval(frame, 10);
+  var dpos = -100;
+  Clear();
+  PageMoveDown = setInterval(frame, 10);
   function frame() {
-    if (pos >= 0) {
-      clearInterval(id);
+    if (dpos >= 0) {
+      clearInterval(PageMoveDown);
     } else {
-      pos ++;
-      elem.top = pos + 'vh';
+      dpos ++;
+      elem.top = dpos + 'vh';
     }
   }
 }
@@ -104,17 +123,16 @@ function pageMoveDn(elem) {
 
 function contentOpen(name) {
   var elem = document.getElementById("CT-Mid").style;
-  var fx = 0;
-
-  clearInterval(ct);
-  ct = setInterval(frame, 3);
+  var ofx = 0;
+  Clear();
+  ContentOpened = setInterval(frame, 3);
   function frame() {
-    if (fx >= 7) {
-      clearInterval(ct);
+    if (ofx >= 7) {
+      clearInterval(ContentOpened);
       contentDisplay(name);
     } else {
-      fx += 0.025;
-      elem.flex = fx;
+      ofx += 0.025;
+      elem.flex = ofx;
     }
   }
 }
@@ -126,16 +144,17 @@ function contentOpen(name) {
 
 function contentClose(name) {
   var elem = document.getElementById("CT-Mid").style;
-  var fx = 4;
+  var cfx = 4;
+  Clear();
   contenthide();
-  cb = setInterval(frame, 10);
+  ContentClosed = setInterval(frame, 10);
   function frame() {
-    if (fx <= 0) {
+    if (cfx <= 0) {
       Clear();
       contentOpen(name);
     } else {
-      fx -= 0.02;
-      elem.flex = fx;
+      cfx -= 0.02;
+      elem.flex = cfx;
     }
   }
 }
@@ -145,8 +164,7 @@ function contentClose(name) {
 -------------------------------------------------------------------  */
 
 function contentDisplay(name) {
-  clearInterval(ct);
-
+  Clear();
   var mid = document.getElementById("CT-Mid").style;
   var venue = document.getElementById("Venue").style;
   var Taxi = document.getElementById("Taxi").style;
