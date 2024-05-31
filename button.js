@@ -1,14 +1,16 @@
 var Landing = true;
 var lastPress = null;
+var width = window.innerWidth;
 
 
 const delay = (delayInms) => {
     return new Promise(resolve => setTimeout(resolve, delayInms));
 };
 
-const buttonClick = async (name) => {
+let buttonClick = async (name) => {
     let delayres = null;
     var exitB = document.getElementsByClassName("exit")[0].style;
+
 
     if (lastPress == name) {
         console.log(`Button press $(name) already pressed`);
@@ -33,7 +35,7 @@ const buttonClick = async (name) => {
     console.log(Landing);
 };
 
-const ButtonClose = async (name) => {
+let ButtonClose = async (name) => {
     var exitB = document.getElementsByClassName("exit")[0].style;
     var main = document.getElementsByTagName("main")[0].style;
     main.top = "-100vh";
@@ -44,43 +46,66 @@ const ButtonClose = async (name) => {
     Landing = !Landing;
     closeContent();
     main.top = "0vh";
-  }
+}
 
 function scrollUp() {
     var main = document.getElementsByTagName("main")[0].style;
-    main.animationName ="none";
+    main.animationName = "none";
 
-    requestAnimationFrame (() => {
+    requestAnimationFrame(() => {
         main.animation = "scroll 1.5s linear 1s 1 normal forwards";
     })
 }
 
 function scrolldown() {
     var main = document.getElementsByTagName("main")[0].style;
-    main.animationName ="none";
+    main.animationName = "none";
 
-    requestAnimationFrame (() => {
+    if (width < 600) {
+        console.log(width);
+        main.top = "-105vh";
+    }
+    else {
+        main.top = "-100vh"
+    }
+
+    requestAnimationFrame(() => {
         main.animation = "scroll 1.5s linear 1s 1 reverse forwards";
     })
 }
 
-function openContent() {
+let openContent = async () => {
     var docContent = document.getElementsByClassName("Content")[0].style;
-    docContent.animationName ="none";
-    docContent.gridTemplateRows = "10vh 0vh 10vh";
+    docContent.animationName = "none";
+    if (width < 600) {
+        console.log(width);
+        docContent.gridTemplateRows = "5% 0% 5%";
+    }
+    else {
+        docContent.gridTemplateRows = "10vh 0vh 10vh";
+    }
+    let delayres = await delay(400);
 
-    requestAnimationFrame (() => {
+    requestAnimationFrame(() => {
         docContent.animation = "close 1.5s linear 0s 1 reverse forwards";
     })
-    
+
 }
 
-function closeContent() {
+const closeContent = async () => {
     var docContent = document.getElementsByClassName("Content")[0].style;
-    docContent.animationName ="none";
-    docContent.gridTemplateRows = "10vh 0vh 10vh";
+    docContent.animationName = "none";
+    if (width < 600) {
+        console.log(width);
+        docContent.gridTemplateRows = "5% 70% 5%";
+    }
+    else {
+        docContent.gridTemplateRows = "10vh 70vh 10vh";
+    }
 
-    requestAnimationFrame (() => {
+    let delayres = await delay(400);
+
+    requestAnimationFrame(() => {
         docContent.animation = "close 1.5s linear 0s 1 normal forwards";
     })
 }
@@ -122,3 +147,7 @@ function contentDisplay(name) {
             console.log("Error");
     }
 }
+
+/*  -------------------------------------------------------------------
+    Phone Functions 
+-------------------------------------------------------------------  */
