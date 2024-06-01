@@ -190,6 +190,8 @@ main {
     overflow-y: scroll;
 }
 
+
+
 /*------------------------------------------------------------------- 
     Main Section / Buffer (Class = Buffer)
 -------------------------------------------------------------------*/
@@ -210,10 +212,17 @@ main .Landing {
     opacity: 0;
 
     justify-content: center;
+    align-items: center;
 
     /*<<<<<Animation>>>>>> to add in on final*/
     animation: fade 3s linear 1.5s 1 normal forwards;
 }
+
+.Landing img{
+    min-width: 5vh;
+    min-height: 50%;
+    max-height: 100%;
+}   
 
 /*------------------------------------------------------------------- 
     Main Section / Content page (Class = Content)
@@ -317,6 +326,15 @@ main #Middle {
     display: flex;
 }
 
+iframe {
+    height: 70vh;
+    min-width: 600px;
+    border: 10px solid goldenrod;
+    border-radius: 10px;
+
+    display: flex;
+}
+
 /* Main ... Middle ... Photos (ID = Photos) */
 #Middle #Photos{
     background-color: yellow;
@@ -341,7 +359,7 @@ main #Middle {
 ====================================================================*/
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
 
     main {
         grid-template-columns: 1fr;
@@ -377,7 +395,7 @@ main #Middle {
         Animations
     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-
+/* 
     @keyframes fade {
         from {opacity: 0;}
         to {opacity: 1;}
@@ -392,6 +410,4 @@ main #Middle {
     @keyframes scroll {
         from {top: 0vh;}
         to {top: -105vh;}
-    }
-
-}
+    } */

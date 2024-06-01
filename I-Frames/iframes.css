@@ -1,0 +1,152 @@
+/*====================================================================
+======================================================================  
+    Root Elements
+======================================================================
+====================================================================*/
+
+:root {
+    --heading-background-colour: rgb(36, 68, 36);
+    --header-font-color: #caa964;
+
+    --H1-font-color: #ca9115;
+    --para-font-color: #caa964;
+
+    --body-background-color: rgb(32, 51, 32);
+
+    font-size: 16px;
+}
+
+html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    animation-fill-mode: both;
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+/*====================================================================
+======================================================================  
+    Font Elements
+======================================================================
+====================================================================*/
+
+h1 {
+    padding-bottom: 1rem;
+    font-size: 4rem;
+    text-align: center;
+    color: var(--H1-font-color);
+}
+
+h2 {
+    padding: 1rem 0px;
+    font-size: 1.5rem;
+    text-align: center;
+    text-align-last: center;
+    color: var(--H1-font-color);
+}
+
+span {
+    font-size: 1rem;
+    color: var(--para-font-color);
+}
+
+ul {
+    color: black;
+    justify-self: left;
+}
+
+li {
+    color: var(--para-font-color);
+    text-decoration: none;
+    text-align: left;
+}
+
+a {
+    color: var(--para-font-color);
+    text-decoration: none;
+}
+
+
+/*====================================================================
+======================================================================  
+    Body Section
+======================================================================
+====================================================================*/
+
+body {
+    max-width: 100vw;
+    height: 100%;
+    background-color: var(--body-background-color);
+    overflow: none;
+}
+
+/*====================================================================
+======================================================================  
+    Main Section
+======================================================================
+====================================================================*/
+
+.grid-container {
+    display: grid;
+    grid-template:
+        'header header header header header header'
+        'intro intro intro intro intro intro'
+        'image image text text text text';
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.item1 {
+    grid-area: header;
+}
+
+.item2 {
+    grid-area: intro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item3 {
+    grid-area: image;
+    display: flex;
+}
+.item3 img {
+    max-height: 40vw;
+}
+
+.item4 {
+    grid-area: text;
+}
+
+
+/* .grid-container {
+        display: grid;
+        grid-template:
+          'header header header header header header'
+          'menu main main main right right'
+          'menu footer footer footer footer footer';
+        grid-gap: 10px;
+        background-color: #2196F3;
+        padding: 10px;
+      }
+      
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
+
+    .item1 { grid-area: header; }
+    .item2 { grid-area: intro; }
+    .item3 { grid-area: image; }
+    .item4 { grid-area: text; }
+*/

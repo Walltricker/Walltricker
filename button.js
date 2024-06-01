@@ -61,13 +61,14 @@ function scrolldown() {
     var main = document.getElementsByTagName("main")[0].style;
     main.animationName = "none";
 
-    if (width < 600) {
-        console.log(width);
-        main.top = "-105vh";
-    }
-    else {
-        main.top = "-100vh"
-    }
+    // if (width < 600) {
+    //     console.log(width);
+    //     main.top = "-105vh";
+    // }
+    // else {
+    //     main.top = "-100vh"
+    // }
+    main.top = "-100vh"
 
     requestAnimationFrame(() => {
         main.animation = "scroll 1.5s linear 1s 1 reverse forwards";
@@ -77,13 +78,14 @@ function scrolldown() {
 let openContent = async () => {
     var docContent = document.getElementsByClassName("Content")[0].style;
     docContent.animationName = "none";
-    if (width < 600) {
-        console.log(width);
-        docContent.gridTemplateRows = "5% 0% 5%";
-    }
-    else {
-        docContent.gridTemplateRows = "10vh 0vh 10vh";
-    }
+    // if (width < 600) {
+    //     console.log(width);
+    //     docContent.gridTemplateRows = "5% 0% 5%";
+    // }
+    // else {
+    //     docContent.gridTemplateRows = "10vh 0vh 10vh";
+    // }
+    docContent.gridTemplateRows = "10vh 0vh 10vh";
     let delayres = await delay(400);
 
     requestAnimationFrame(() => {
@@ -95,13 +97,14 @@ let openContent = async () => {
 const closeContent = async () => {
     var docContent = document.getElementsByClassName("Content")[0].style;
     docContent.animationName = "none";
-    if (width < 600) {
-        console.log(width);
-        docContent.gridTemplateRows = "5% 70% 5%";
-    }
-    else {
-        docContent.gridTemplateRows = "10vh 70vh 10vh";
-    }
+    // if (width < 600) {
+    //     console.log(width);
+    //     docContent.gridTemplateRows = "5% 70% 5%";
+    // }
+    // else {
+    //     docContent.gridTemplateRows = "10vh 70vh 10vh";
+    // }
+    docContent.gridTemplateRows = "10vh 70vh 10vh";
 
     let delayres = await delay(400);
 
