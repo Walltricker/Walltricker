@@ -117,7 +117,7 @@ body {
 header {
     /* Positioning on page */
     z-index: 1;
-    position: fixed;
+    position: sticky;
     top: 90vh;
 
     /* Box sizing */
