@@ -318,7 +318,7 @@ main #Middle {
 
 #RSVP object {
     height: 70vh;
-    min-width: 400px;
+    min-width: 600px;
     border: 10px solid goldenrod;
     border-radius: 10px;
 
@@ -328,9 +328,7 @@ main #Middle {
 
 iframe {
     height: 70vh;
-    min-width: 400px;
-    max-width: 80vh;
-
+    min-width: 600px;
     border: 10px solid goldenrod;
     border-radius: 10px;
 
