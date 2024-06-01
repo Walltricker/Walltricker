@@ -328,7 +328,7 @@ main #Middle {
 
 iframe {
     height: 70vh;
-    min-width: 600px;
+    width: 90vw;
     border: 10px solid goldenrod;
     border-radius: 10px;
 
