@@ -5,13 +5,15 @@
 ====================================================================*/
 
 :root {
-    --heading-background-colour: rgb(36, 68, 36);
-    --header-font-color: #caa964;
+    --heading-background-colour: #254D2F ;
+    --header-font-color: #AF8C4B;
 
-    --H1-font-color: #ca9115;
-    --para-font-color: #caa964;
+    --H1-font-color: #AF8C4B;
+    --H2-font-color: #D89C49;
 
-    --body-background-color: rgb(32, 51, 32);
+    --para-font-color: #D2AB4B;
+
+    --body-background-color:#19331B;
 
     font-size: 16px;
 }
@@ -272,142 +274,39 @@ __________________________________________________________________*/
 
 main #Middle {
     grid-area: "Middle";
-    overflow-y: scroll;
-
+    padding: 10px;
     display: flex;
 
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
 }
 
-/* Main ... Middle ... Venue (ID = Venue) */
-#Middle #Venue{
+#Middle iframe{
     background-color: none;
-    max-width: 600px;
     display: none; /*Flex*/
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-self: center;
+    border:0;
 
-}
-
-#MoatImg {
-    max-width: 600px;
-    height: auto;
-}
-
-
-/* Main ... Middle ... Taxi (ID = Taxi) */
-#Middle #Taxi{
-    background-color: none;
-    max-width: 600px;
-    display: none; /*Flex*/
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    max-width: 820px;
+    min-width: 90vw;
 }
 
 /* Main ... Middle ... RSVP (ID = RSVP) */
-#Middle #RSVP{
-    background-color: none;
-    display: none; /*Flex*/
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#RSVP object {
-    height: 70vh;
-    min-width: 600px;
-    border: 10px solid goldenrod;
-    border-radius: 10px;
-
-    background-color: white;
-    display: flex;
-}
 
 iframe {
-    height: 70vh;
-    min-width: 600px;
-    border: 10px solid goldenrod;
-    border-radius: 10px;
-
-    display: flex;
+    border: none;
 }
 
-/* Main ... Middle ... Photos (ID = Photos) */
-#Middle #Photos{
-    background-color: yellow;
+iframe::-webkit-scrollbar{
     display: none;
 }
-
-/* Main ... Middle ... Other (ID = Other) */
-#Middle #Entertainment{
-    background-color: none;
-    max-width: 600px;
-    display: flex; /*Flex*/
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 
 /*====================================================================
 ======================================================================  
     Phone Settings
 ======================================================================
 ====================================================================*/
-
-/* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {
-
-    main {
-        grid-template-columns: 1fr;
-        grid-template-rows: 90vh 10vh 90vh 10vh;
-    
-        grid-template-areas: "Landing" "Buffer" "Content" "Buffer";
-    }
-
-    main .Landing {
-        align-items: center;
-    }
-    
-    .Landing img{
-        flex:0.5;
-        max-height: 50%;
-    }   
-    
-    header {
-        position: sticky;
-    }
-
-    main .Content {
-        grid-area: "Content";
-    
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 5% 0 5%;
-        grid-template-areas: "Upper" "Middle" "Lower";
-    }
-
-    /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
-        Animations
-    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-/* 
-    @keyframes fade {
-        from {opacity: 0;}
-        to {opacity: 1;}
-        
-    }
-
-    @keyframes close {
-        from {grid-template-rows: 5% 70% 5%;}
-        to {grid-template-rows: 5% 0% 5%;}
-    }
-
-    @keyframes scroll {
-        from {top: 0vh;}
-        to {top: -105vh;}
-    } */
