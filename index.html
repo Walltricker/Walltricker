@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Website</title>
+
+    <!-- CSS Stylesheets -->
+    <Link rel="stylesheet" href="/Css/Root.Css">
+    </Link>
+    <Link rel="stylesheet" href="/Css/Fonts.Css">
+    </Link>
+    <Link rel="stylesheet" href="/Css/Animations.Css">
+    </Link>
     <link rel="stylesheet" href="/Css/style.global.css">
+
+
     <script src="/button.js"></script>
 </head>
+
 <body>
     <header>
         <button class="Page-Navigation" onclick="buttonClick(`Venue`)">Venue</button>
         <button class="Page-Navigation" onclick="buttonClick(`Taxi`)">Taxi</button>
         <button class="Page-Navigation" onclick="buttonClick(`RSVP`)">RSVP</button>
-        <button class="Page-Navigation" onclick="buttonClick(`Photos`)">Photos</button>
-        <button class="Page-Navigation" onclick="buttonClick(`Entertainment`)">Entertainment</button>
+        <button class="Page-Navigation" onclick="buttonClick(`Photos`)">Our Story</button>
+        <button class="Page-Navigation" onclick="buttonClick(`Entertainment`)">FAQ</button>
         <button class="exit" onclick="ButtonClose()">Homepage</button>
     </header>
     <main>
@@ -30,7 +42,8 @@
             <div id="Middle">
                 <iframe id="Venue" src="/I-Frames/Venue.html"></iframe>
                 <iframe id="Taxi" src="/I-Frames/Taxi.html"></iframe>
-                <iframe id="RSVP"src="https://docs.google.com/forms/d/e/1FAIpQLSe3ponQYllKwuolRXzy2AUUBDTrgah6Ct9gwEApMmELFUiSdQ/viewform?embedded=true">Loading…</iframe>      
+                <iframe id="RSVP"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSe3ponQYllKwuolRXzy2AUUBDTrgah6Ct9gwEApMmELFUiSdQ/viewform?embedded=true">Loading…</iframe>
                 <iframe id="Photos" src="/I-Frames/Photos.html"></iframe>
                 <iframe id="Entertainment" src="/I-Frames/Q&A.html"></iframe>
             </div>
@@ -41,4 +54,5 @@
         <section class="Buffer"></section>
     </main>
 </body>
+
 </html>

@@ -1,0 +1,32 @@
+/*====================================================================
+======================================================================  
+    Root Elements
+======================================================================
+====================================================================*/
+
+:root {
+    --heading-background-colour: #254D2F ;
+    --header-font-color: #AF8C4B;
+
+    --H1-font-color: #AF8C4B;
+    --H2-font-color: #D89C49;
+
+    --para-font-color: #D2AB4B;
+
+    --body-background-color:#19331B;
+}
+
+html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    animation-fill-mode: both;
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
