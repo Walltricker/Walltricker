@@ -104,9 +104,11 @@ main .Landing {
 main .Content {
     grid-area: "Content";
 
+    border: 1px solid red   ;
+
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh 0vh 10vh;
+    grid-template-rows: 10% 0vh 10%;
     grid-template-areas: "Upper" "Middle" "Lower";
 
     align-content: center;

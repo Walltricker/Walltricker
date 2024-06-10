@@ -11,8 +11,8 @@
 }
 
 @keyframes close {
-    from {grid-template-rows: 10vh 70vh 10vh;}
-    to {grid-template-rows: 10vh 0vh 10vh;}
+    from {grid-template-rows: 10% 80% 10%;}
+    to {grid-template-rows: 10% 0% 10%;}
 }
 
 @keyframes scroll {

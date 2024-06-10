@@ -85,7 +85,7 @@ let openContent = async () => {
     // else {
     //     docContent.gridTemplateRows = "10vh 0vh 10vh";
     // }
-    docContent.gridTemplateRows = "10vh 0vh 10vh";
+    docContent.gridTemplateRows = "10% 0% 10%";
     let delayres = await delay(400);
 
     requestAnimationFrame(() => {
@@ -104,7 +104,7 @@ const closeContent = async () => {
     // else {
     //     docContent.gridTemplateRows = "10vh 70vh 10vh";
     // }
-    docContent.gridTemplateRows = "10vh 70vh 10vh";
+    docContent.gridTemplateRows = "10% 80% 10%";
 
     let delayres = await delay(400);
 
