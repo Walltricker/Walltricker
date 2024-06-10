@@ -51,12 +51,12 @@ main {
     top: 0vh;
 
     height: 200dvh;
-    width: 100vw;
+    width: 100dvw;
 
     display: grid;
 
     grid-template-columns: 1fr;
-    grid-template-rows: 90vh 10vh 90vh 10vh;
+    grid-template-rows: 45% 5% 45% 5%;
 
     grid-template-areas: "Landing" "Buffer" "Content" "Buffer";
 
