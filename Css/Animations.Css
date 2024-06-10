@@ -16,6 +16,6 @@
 }
 
 @keyframes scroll {
-    from {top: 0vh;}
-    to {top: -100vh;}
+    from {top: 0dvh;}
+    to {top: -100dvh;}
 }

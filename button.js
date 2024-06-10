@@ -45,7 +45,7 @@ let ButtonClose = async (name) => {
     let delayres = await delay(3000);
     Landing = !Landing;
     closeContent();
-    main.top = "0vh";
+    main.top = "0dvh";
 }
 
 function scrollUp() {
@@ -68,7 +68,7 @@ function scrolldown() {
     // else {
     //     main.top = "-100vh"
     // }
-    main.top = "-100vh"
+    main.top = "-100dvh"
 
     requestAnimationFrame(() => {
         main.animation = "scroll 1.5s linear 1s 1 reverse forwards";

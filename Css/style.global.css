@@ -48,7 +48,7 @@ header {
 main {
     position: fixed;
 
-    top: 0vh;
+    top: 0dvh;
 
     height: 200dvh;
     width: 100dvw;
