@@ -50,7 +50,7 @@ main {
 
     top: 0dvh;
 
-    height: 200dvh;
+    height: 200%;
     width: 100dvw;
 
     display: grid;
@@ -103,8 +103,6 @@ main .Landing {
 
 main .Content {
     grid-area: "Content";
-
-    border: 1px solid red   ;
 
     display: grid;
     grid-template-columns: 1fr;
