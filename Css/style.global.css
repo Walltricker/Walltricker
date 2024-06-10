@@ -50,7 +50,7 @@ main {
 
     top: 0vh;
 
-    height: 200%;
+    height: 200dvh;
     width: 100vw;
 
     display: grid;
