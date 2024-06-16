@@ -194,6 +194,17 @@ iframe::-webkit-scrollbar{
     height: 500px;
 }
 
+img{
+    max-width: 90dvw;
+    align-self: center;
+    margin: 10px 0;
+}
+
+.flowers {
+    flex: 1;
+    max-width: 40dvh;
+}
+
 
 
 /*====================================================================
