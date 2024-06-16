@@ -125,10 +125,6 @@ header .Page-Navigation:hover {
     color: white;
  }
 
- header .Page-Navigation:active {
-    color: white; /*TO DO - Define Colour properly*/
-    background-color: #19331B;
- }
 
  header .exit{
     position: fixed;

@@ -1,6 +1,7 @@
 var Landing = true;
 var lastPress = null;
 var width = window.innerWidth;
+var animationStatus = false;
 
 
 const delay = (delayInms) => {
@@ -8,6 +9,10 @@ const delay = (delayInms) => {
 };
 
 let buttonClick = async (name) => {
+    if (animationStatus) {
+        return;
+    }
+
     let delayres = null;
     var exitB = document.getElementsByClassName("exit")[0].style;
 
@@ -18,6 +23,7 @@ let buttonClick = async (name) => {
         console.log(`Button press $(name) already pressed`);
     }
     else if (Landing) {
+        animationStatus = true;
         scrollUp();
         Landing = !Landing;
         lastPress = name;
@@ -25,19 +31,28 @@ let buttonClick = async (name) => {
         delayres = await delay(3000);
         openContent();
         exitB.display = "inline";
+        delayres = await delay(1000);
+        animationStatus = false;
     }
     else {
+        animationStatus = true;
         lastPress = name;
         console.log(`it got to the close section`);
         closeContent();
         delayres = await delay(3000);
         contentDisplay(name);
         openContent();
+        delayres = await delay(1000);
+        animationStatus = false;
     }
     console.log(Landing);
 };
 
 let ButtonClose = async (name) => {
+    if (animationStatus) {
+        return;
+    }
+    animationStatus = true;
     var exitB = document.getElementsByClassName("exit")[0].style;
     var main = document.getElementsByTagName("main")[0].style;
     main.top = "-100vh";
@@ -49,6 +64,8 @@ let ButtonClose = async (name) => {
     Landing = !Landing;
     closeContent();
     main.top = "0dvh";
+    delayres = await delay(1000);
+    animationStatus = false;
 }
 
 function scrollUp() {
@@ -64,13 +81,6 @@ function scrolldown() {
     var main = document.getElementsByTagName("main")[0].style;
     main.animationName = "none";
 
-    // if (width < 600) {
-    //     console.log(width);
-    //     main.top = "-105vh";
-    // }
-    // else {
-    //     main.top = "-100vh"
-    // }
     main.top = "-100dvh"
 
     requestAnimationFrame(() => {
