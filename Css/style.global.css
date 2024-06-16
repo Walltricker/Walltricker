@@ -1,4 +1,10 @@
-
+/* Imports */
+/* Alegreya */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400..900&display=swap');
+/* Alegreya SC*/
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap');
+/* Raleway*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*====================================================================
 ======================================================================  
@@ -104,7 +110,7 @@ main .Landing {
     width: 30dvw;
     height: 5dvh;
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.486);
+    background-color: rgba(0, 0, 0, 0.75);
     font-size: 1.75rem;
     position: relative;
     top: -43dvh;
@@ -274,7 +280,7 @@ img{
         align-items: center;
     }
     .title-bar {
-        font-size: 1.2rem;
+        font-size: 1.5vh;
         font-weight: 200;
         width: 30dvh;
         text-align: center;
