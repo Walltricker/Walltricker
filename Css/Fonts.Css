@@ -39,7 +39,8 @@ h2 {
     width: 100%;
     padding: 1rem 0px;
     font-size: 2rem;
-    text-align: left;
+    justify-self: left;
+    align-self: left;
     color: var(--H2-font-color);
 }
 
@@ -48,6 +49,8 @@ h3 {
     color: var(--H3-font-color);
     font-size: 1.5rem;
     text-align: left;
+    align-self: left;
+    justify-self: left;
     padding: 0.75rem 0rem;
 }
 
@@ -133,21 +136,12 @@ header .Page-Navigation:hover {
     border: none;
     background-color: rgb(255, 255, 255, 0);
 
-    top: 5%;
-    right: 5vw;
+    top: 3%;
+    right: 1vw;
 
     display: none;
 }
 
-@media only screen and (max-width: 600px) {
-
-
-    h2 {
-        text-align: center;
-    }
-
-    h3 {
-        text-align: center;
-    }
-
+header .exit img{
+    height: 50px;
 }

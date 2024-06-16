@@ -155,9 +155,11 @@ main #Middle {
     justify-content: center;
 }
 
-#Middle iframe{
+#Middle article{
+    overflow: scroll;
+    /* border: 1px solid red;
     background-color: none;
-    display: none; /*Flex*/
+    display: none; 
     flex-direction: column;
     justify-content: center;
     align-self: center;
@@ -165,10 +167,8 @@ main #Middle {
 
     height: 100%;
     max-width: 820px;
-    min-width: 90vw;
+    min-width: 90vw; */
 }
-
-/* Main ... Middle ... RSVP (ID = RSVP) */
 
 iframe {
     border: none;
@@ -190,7 +190,9 @@ iframe::-webkit-scrollbar{
     display: flex;
 }
 
-
+.map {
+    height: 500px;
+}
 
 
 
