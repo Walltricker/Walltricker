@@ -104,6 +104,14 @@ td {
 /* BUTTONS ON PAGE */
 header .Page-Navigation {
     background-color: #ffffff00;
+    border: none;
+    color: var(--header-font-color);
+    font-size: 1.5rem;
+    font-family: "Alegreya";
+}
+
+header .Page-Navigation span {
+    background-color: #ffffff00;
     border: 0px;
     color: var(--header-font-color);
     font-size: 1.5rem;
@@ -116,6 +124,7 @@ header .Page-Navigation:hover {
 
  header .Page-Navigation:active {
     color: white; /*TO DO - Define Colour properly*/
+    background-color: #19331B;
  }
 
  header .exit{

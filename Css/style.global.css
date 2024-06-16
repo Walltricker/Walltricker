@@ -33,10 +33,12 @@ header {
 
     /* Alignment of Childern */
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
     /* Background Details */
     background-color: var(--heading-background-colour);
+
+    border-top: 2px dotted var(--header-font-color);
 }
 
 /*====================================================================
@@ -177,12 +179,46 @@ iframe {
     max-width: 820px;
 }
 
+
+
 iframe::-webkit-scrollbar{
     display: none;
 }
+
+.Page-Navigation img {
+    height: 10dvh;
+    display: flex;
+}
+
+
+
+
 
 /*====================================================================
 ======================================================================  
     Phone Settings
 ======================================================================
 ====================================================================*/
+
+@media only screen and (max-width: 600px) {
+
+
+    .Page-Navigation img {
+      display: flex;
+      width: 20dvw;
+      display: flex;
+    }
+    .Page-Navigation span {
+        display: none;
+      }
+    header .Page-Navigation:hover {
+        background-color: rgba(10, 36, 9, 0.26);
+     }
+
+     .Page-Navigation {
+        flex: 1;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+}

@@ -11,6 +11,8 @@ let buttonClick = async (name) => {
     let delayres = null;
     var exitB = document.getElementsByClassName("exit")[0].style;
 
+    iconDisplay("Clear");
+    iconDisplay(name);
 
     if (lastPress == name) {
         console.log(`Button press $(name) already pressed`);
@@ -39,6 +41,7 @@ let ButtonClose = async (name) => {
     var exitB = document.getElementsByClassName("exit")[0].style;
     var main = document.getElementsByTagName("main")[0].style;
     main.top = "-100vh";
+    iconDisplay("Clear");
     scrolldown();
     lastPress = null;
     exitB.display = "none";
@@ -124,6 +127,12 @@ function contentDisplay(name) {
     var Photos = document.getElementById("Photos").style;
     var Entertainment = document.getElementById("Entertainment").style;
 
+    var venueimg = document.getElementById("Venue-unclicked");
+    var Taxiimg = document.getElementById("Taxi-unclicked");
+    var Photosimg = document.getElementById("Photos-unclicked");
+    var Entertainmentimg = document.getElementById("Entertainment-unclicked");
+    var RSVPimg = document.getElementById("RSVP-unclicked");
+
     venue.display = "None";
     Taxi.display = "None";
     RSVP.display = "None";
@@ -133,23 +142,76 @@ function contentDisplay(name) {
     switch (name) {
         case "Venue":
             venue.display = "flex";
+            venueimg.src = "/resources/ICONS/Venue-click.png";
             break;
         case "Taxi":
             Taxi.display = "flex";
+            Taxiimg.src = "/resources/ICONS/Hotel-click.png";
             break;
         case "RSVP":
             RSVP.display = "flex";
+            RSVPimg.src = "/resources/ICONS/RSVP-click.png";
             break;
         case "Photos":
             Photos.display = "flex";
+            Photosimg.src = "/resources/ICONS/About-click.png";
             break;
         case "Entertainment":
             Entertainment.display = "flex";
+            Entertainmentimg.src = "/resources/ICONS/FAQ-click.png";
             break;
+        case "Clear":
+            Taxiimg.src = "resources/ICONS/Hotel.PNG";
+            venueimg.src = "/resources/ICONS/Venue.PNG";
+            RSVPimg.src = "/resources/ICONS/RSVP.png";
+            Photosimg.src = "resources/ICONS/About.PNG";
+            Entertainmentimg.src = "resources/ICONS/FAQ.PNG";
+            console.log("Clear")
         default:
             console.log("Error");
     }
 }
+
+
+function iconDisplay(name) {
+    var venueimg = document.getElementById("Venue-unclicked");
+    var Taxiimg = document.getElementById("Taxi-unclicked");
+    var Photosimg = document.getElementById("Photos-unclicked");
+    var Entertainmentimg = document.getElementById("Entertainment-unclicked");
+    var RSVPimg = document.getElementById("RSVP-unclicked");
+
+    switch (name) {
+        case "Venue":
+            venueimg.src = "/resources/ICONS/Venue-click.png";
+            break;
+        case "Taxi":
+            Taxiimg.src = "/resources/ICONS/Hotel-click.png";
+            break;
+        case "RSVP":
+            RSVPimg.src = "/resources/ICONS/RSVP-click.png";
+            break;
+        case "Photos":
+            Photosimg.src = "/resources/ICONS/About-click.png";
+            break;
+        case "Entertainment":
+            Entertainmentimg.src = "/resources/ICONS/FAQ-click.png";
+            break;
+        case "Clear":
+            Taxiimg.src = "resources/ICONS/Hotel.PNG";
+            venueimg.src = "/resources/ICONS/Venue.PNG";
+            RSVPimg.src = "/resources/ICONS/RSVP.png";
+            Photosimg.src = "resources/ICONS/About.PNG";
+            Entertainmentimg.src = "resources/ICONS/FAQ.PNG";
+            console.log("Clear")
+        default:
+            console.log("Error");
+    }
+}
+
+/*  -------------------------------------------------------------------
+    icon button 
+-------------------------------------------------------------------  */
+
 
 /*  -------------------------------------------------------------------
     Phone Functions 
