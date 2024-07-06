@@ -42,7 +42,7 @@
 
         --body-background-color: #18392b;
 
-        font-size: calc(100vh/100vw);
+        font-size: 16px;
     }
 
 /*********************************************************************  
@@ -88,6 +88,7 @@
     }
 
     h2 {
+        font-family: "Alegreya+SC";
         width: 100%;
         padding: 0px;
         font-size: 2rem;
@@ -103,7 +104,6 @@
         text-align: left;
         align-self: left;
         justify-self: left;
-        padding: 0.75rem 0rem;
     }
 
 /*********************************************************************  
@@ -112,7 +112,7 @@
     p {
         color: var(--para-font-color);
         font-family: "Raleway";
-        font-size: 1.1rem;
+        font-size: 1rem;
         text-align: left;
         color: white;
     }
@@ -146,7 +146,8 @@
     ul {
         color: black;
         justify-self: left;
-        margin: 15px;
+        margin: 1% 5%;
+        list-style-position: inside;
     }
 
     li {
@@ -154,7 +155,7 @@
         font-family: "Raleway";
         font-size: 1.1rem;
         text-align: left;
-        padding: 0.25rem;
+
     }
 
 /*********************************************************************  
@@ -162,13 +163,20 @@
 *********************************************************************/
     table *{
         color: var(--para-font-color);
+        width: 50%;
     }
 
     td {
-        width: 50%;
         text-align: left;
         font-family: "Raleway";
         font-size: 1.1rem;
+    }
+
+    .table_column{
+        color: var(--para-font-color);
+        text-align: right;
+        padding: 0 10%;
+
     }
 
 /*---------------------------------------------------------------------
@@ -207,10 +215,9 @@
         width: 100%;
         height: 10vh;
         display: flex;
-        align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         background-color: var(--heading-background-colour);
-        border-top: 2px dotted var(--header-font-color);
+        border-top: 1.5px dotted var(--header-font-color);
     }
 
     /*----------------------
@@ -223,11 +230,21 @@
             color: var(--header-font-color);
             font-size: 1.5rem;
             font-family: "Alegreya";
+            height: 100%;
+            width: 15%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
         }
 
         .Page-Navigation img {
-            height: 10dvh;
-            display: flex;
+            object-fit: contain;
+            height: 100%
+            
+
+
         }
     
     /*----------------------
@@ -291,6 +308,7 @@
         justify-content: center;
         align-items: center;
         animation: fade 3s linear 1.5s 1 normal forwards;
+        opacity: 0;
     }
 
         /*----------------------
@@ -321,23 +339,28 @@
             grid-area: "b";
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             z-index: 9;
         }
 
         .L-Foreground .title-bar {
             font-family: "Alegreya" ;  
-            letter-spacing: 5px;
-            width: 30dvw;
-            height: 5dvh;
+            width: 60dvw;
+            height: 3%;
             color: rgb(255, 255, 255);
-            background-color: #18392b9f;
-            font-size: 2rem;
+            background-color: #18392b15;
+            font-size: 37.5px;
             position: relative;
-            top: -43dvh;
+            top: -47dvh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 0;
+            border-radius: 10px;
+        }
+
+        #top_title{
+            font-size: 25px;
         }
 
     /*----------------------
@@ -362,7 +385,7 @@
         grid-area: "Content";
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 10% 0vh 10%;
+        grid-template-rows: 10% 0% 10%;
         grid-template-areas: "Upper" "Middle" "Lower";
         align-content: center;
     }
@@ -374,7 +397,10 @@
         #Upper {
             grid-area: "Upper";
             display: flex;
-            justify-content: center; }
+            justify-content: center;
+            z-index: 2;
+            background-color: var(--body-background-color); 
+        }
         /*----------------------
         Main >
         ID : Middle
@@ -383,24 +409,38 @@
             grid-area: "Middle";
             padding: 10px;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-content: center;
-            justify-content: center; }
+            align-items: center;
+            justify-content: flex-start;
+            overflow: scroll;
+            z-index: 1; 
+            
+        }
 
             /*----------------------
             Middle > ID : RSVP
             ------------------------ */
-            iframe {border: none;}
+            iframe {
+                border: none;
+                justify-content: center;
+                align-items: center;
+            }
             
             #RSVP {
-                background-color: rgba(255, 255, 255, 0.438);
-                max-width: 820px;
+                
+                max-width: 100%;
                 flex: 1;
                 display: flex;
+                flex-direction: column;
                 align-self: stretch;
                 justify-self: stretch;}
             
-            iframe::-webkit-scrollbar{display: none;}
+           #RSVP::-webkit-scrollbar{
+            display: none;
+           }
+
+           
 
         /*----------------------
         Main >
@@ -409,7 +449,9 @@
         #Lower {
             grid-area: "Lower";
             display: flex;
-            justify-content: center; }
+            justify-content: center;
+            background-color: var(--body-background-color); 
+            z-index: 2;  }
 
         /*----------------------
         Lower / Upper > .FLowers 
@@ -434,125 +476,129 @@
 /*║ *********************************************************************  ║
   ║     MIDDLE / Article 
   ║ *********************************************************************  ║*/
-        #Middle article{
-            overflow: scroll;
-        }
+    Article {
+        scroll-margin-top: 1px;
+        flex: 1;
+        overflow: scroll;
+        display: none;
+        grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr;
+        min-height: 80vh;
+        max-width: 70%;
+    }
 
 /*║ *********************************************************************  ║
-  ║     Article / Grid Container (Class) 
+  ║     Article / Title Container (Class) 
   ║ *********************************************************************  ║*/
-        .grid-container {
-            max-width: 820px;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: fit-content;
-            grid-auto-rows: 1fr;
-            grid-template-areas:
-                'header'
-                'contentcard';
-            grid-gap: 10px;
-        }
+
+    #Article_title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+    }
+
+    .ContentBox{
+        flex: 1;           
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .Card_Box{
+        width: 100%;
+        display: grid;
+        grid-template: 1fr /  1fr;
+    }
+    
+    #Card_Title{
+        min-height: 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .ContentCard, .Photocard{
+        display: flex;
+        flex-direction: row;        
+    }
+
+    
+    
+    #reverse {
+        flex-direction: row-reverse;
+    }
+
+    .card_column{
+        flex-direction: column;
+    }
+    
+    .ContentCard .image{
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 10px;
+    
+    }
+    
+    .image img{
+        flex: 1;
+        object-fit: cover;
+        object-position: center center;
+        max-width: 100%;
+        min-height: 250px;
+        height: 100%;
+    }
+    
+    .ContentCard .text {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+
+    }
+    
+    .Photocard .image {
+        visibility: visible;
+    }
+
+    .map{
+        flex: 1;
+        min-height: 500px;
+    }
 
 /*║         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  ║
-  ║         Grid Container / Title Card
+  ║         TEMPLATE
   ║         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  ║*/
-            .titleCard {
-                flex: 1;
-                grid-area: "header";
-                display: flex;
-                align-items: center;
-                justify-content: center;      }
 
-/*║         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  ║
-  ║         Grid Container / Content Card
-  ║         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  ║*/
-            .ContentCard{ /*Forward Variant*/
-                height: fit-content;
-                overflow: none;    
-                grid-area: "ContentCard";
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                align-content: space-between; }
-/*║                                                                        ║*/
-            .ContentCard_R{ /*Reverse Variant*/
-                height: fit-content;
-                overflow: none;    
-                grid-area: "ContentCard";
-                display: flex;
-                flex-direction:row-reverse;
-                justify-content: space-evenly;
-                align-content: space-between;
-            }
+    @media only screen and (max-width: 800px) {
 
-/*║         -------------------------------------------------------------  ║
-  ║          Content Card / Text
-  ║         -------------------------------------------------------------  ║*/
-            .ContentCardtext {
-                flex: 2;
-                margin: 0px 15px;
-            }
+    .ContentCard, .Photocard{
+        justify-content: center;
+        align-content: center;
+    }
 
-            .ContentCardtext .map {
-                height: 500px;
-            }
+    #forward, #reverse{
+        flex-direction: column;
+    }
 
-/*║         -------------------------------------------------------------  ║
-  ║          Content Card / Div     (storing Image)
-  ║         -------------------------------------------------------------  ║*/
+    .Photocard .image {
+        margin: 0 0 5px 0;
+    }       
+    
+    Article {
+        max-width: 100%;
+    }
 
-            #moatout {
-                flex: 1;
-                background-image: url("/resources/Images/MoatInside.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: bottom center;
-                min-height: 40vh;
-                margin: 10px;
-            }
-/*║                                                                        ║*/
-/*║                                                                        ║*/
-            #moatin {
-                flex: 2;
-                background-image: url("/resources/Images/moat.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-                margin: 10px;
-            }
-/*║                                                                        ║*/
-/*║                                                                        ║*/
-            #moathotel {
-                flex: 2;
-                background-image: url("/resources/Images/MoatHotel.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-                min-height: 40vh;
-                margin: 10px;
-            }
-/*║                                                                        ║*/
-/*║                                                                        ║*/
-            #moatTaxi {
-                flex: 2;
-                background-image: url("/resources/Images/Fairway+Wedding+2.jpeg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: 25% center; 
-                min-height: 40vh;
-                margin: 10px;
-            }
-
+}
 /*║ *********************************************************************  ║
   ║                          SUB SECTION END
   ║ *********************************************************************  ║
   ╚════════════════════════════════════════════════════════════════════════╝  */
-
-img{
-    max-width: 90%;
-    align-self: center;
-    margin: 10px 0;
-}
 
 /*---------------------------------------------------------------------
 ///////////////////////////////////////////////////////////////////////
@@ -563,7 +609,11 @@ img{
 //////////////////////////////////////////////////////////////////////
 ---------------------------------------------------------------------*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+
+    :root{
+        font-size: 16px;
+    }
 
     .Page-Navigation img {
       display: flex;
@@ -577,45 +627,49 @@ img{
      .Page-Navigation {
         flex: 1;
         display: flex;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
     }
-    .title-bar {
-        font-size: 1dvh;
-        font-weight: 200;
-        width: 30dvh;
+
+    #top_title{
+        font-size: 1rem;
+    }
+
+    h1 h2 h3 {
+        padding: 5% 0;
+    }
+
+    p{
+        text-align:justify;
+        width: 100%;
+        padding: 0 5%;
+        font-size: 1.25rem;
+    }
+    
+    .table *{
+        color: var(--para-font-color);
+        justify-content: center;
+    }
+
+
+    td{ 
+        text-align: left;
+    }
+
+    .L-Foreground .title-bar {
+        top: -46dvh;
+        font-size: 1.3rem;
+        width: 100dvw;
         text-align: center;
         height: 25px;
     }
 
-    .grid-container {
-        display: flex;
-        flex-direction: column;
-       } 
-   
-       .ContentCard{
-           flex-direction: column;
-           justify-content: center;
-           align-content: center;
-       }
-       .ContentCard{
-           flex-direction: column;
-           justify-content: center;
-           align-content: center;
-       }
-   
-       .ContentCard_R{
-           flex-direction: column;
-           justify-content: center;
-           align-content: center;
-       }
-   
-       .ContentCardtext {
-           display: flex;
-           flex-direction: column;
-       }
-   
-       #moatTaxi {
-           background-size: cover;
-       }
+    .Photocard .image {
+        padding: 0.75dvh 0;
+        margin: 0;
+    }
+
+
+
 }
+
